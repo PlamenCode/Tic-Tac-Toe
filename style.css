@@ -27,7 +27,7 @@ body{
     height: 300px;
     margin: auto;
 }
-.winnerText{
+.winnerContainer{
     display: none;
     width: 100vw;
     height: 100vh;
@@ -39,9 +39,19 @@ body{
     background-color: rgba(0, 0, 0, 0.356);
 }
 .restart{
-    z-index: 10;
+    z-index: 2;
     font-size: 40px;
     background-color: rgba(255, 255, 255, 0);
     border: none;
     cursor: pointer;
+    position: absolute;
+    top: 450px;
+    left: 700px;
+}
+.large{
+    font-size: 100px;
+    color: rgb(115, 255, 115);
+    position: absolute;
+    top: 450px;
+    left: 600px;
 }

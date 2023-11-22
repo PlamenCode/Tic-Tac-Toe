@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll('.cell');
 const statusText = document.querySelector('.statusText');
 const restartBtn = document.querySelector('.restart');
+const winnerContainer = document.querySelector('.winnerContainer');
 const winnerText = document.querySelector('.winnerText');
 const winConditions = [
     [0, 1, 2],
@@ -66,10 +67,16 @@ function checkWinner(){
     if(roundWon){
         statusText.textContent = `${currentPlayer} wins!`;
         running = false;
-        // winnerText.style.display = 'block';
+
+        winnerContainer.style.display = 'block';
+        winnerText.textContent = `${currentPlayer} wins!`
+        restartBtn.className = 'restart large';
     } else if(!options.includes('')){
         statusText.textContent = `Draw!`;
-        // winnerText.style.display = 'block';
+
+        winnerContainer.style.display = 'block';
+        winnerText.textContent = 'Draw!'
+        restartBtn.className = 'restart large';
         running = false;
     } else{
         changePlayer();
@@ -81,5 +88,8 @@ function restartGame(){
     options = ['', '', '', '', '', '', '', '', '', ];
     statusText.textContent = `${currentPlayer}'s turn.`;
     cells.forEach(cell => cell.textContent = '');
+    winnerContainer.style.display = 'none';
+    winnerText.textContent = '';
+    restartBtn.className = 'restart';
     running = true;
 };
