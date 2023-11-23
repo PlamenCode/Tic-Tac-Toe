@@ -1,3 +1,4 @@
+firabaseScript.js
 
 logs
 *.log
@@ -25,4 +26,3 @@ node_modules/
 *.tgz
 .yarn-integrity
 .env
-firabaseScript
