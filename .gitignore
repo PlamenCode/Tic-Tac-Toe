@@ -25,4 +25,4 @@ node_modules/
 *.tgz
 .yarn-integrity
 .env
-firebaseScript.js
+firabaseScript
