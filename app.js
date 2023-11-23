@@ -39,6 +39,11 @@ function cellClicked(){
 function updateCell(cell, index){
     options[index] = currentPlayer;
     cell.textContent = currentPlayer;
+    if(currentPlayer == 'X'){
+        cell.className = 'cell red';
+    } else if(currentPlayer == '0'){
+        cell.className = 'cell blue';
+    }
 };
 
 function changePlayer(){
@@ -71,9 +76,15 @@ function checkWinner(){
         winnerContainer.style.display = 'block';
         winnerText.textContent = `${currentPlayer} wins!`
         restartBtn.className = 'restart large';
+
+        if(currentPlayer == 'X'){
+            winnerText.className = 'winnerText redWin'
+        } else if( currentPlayer == '0'){
+            winnerText.className = 'winnerText blueWin'
+        }
     } else if(!options.includes('')){
         statusText.textContent = `Draw!`;
-
+        winnerText.className = 'winnerText';
         winnerContainer.style.display = 'block';
         winnerText.textContent = 'Draw!'
         restartBtn.className = 'restart large';
@@ -87,7 +98,10 @@ function restartGame(){
     currentPlayer = 'X';
     options = ['', '', '', '', '', '', '', '', '', ];
     statusText.textContent = `${currentPlayer}'s turn.`;
-    cells.forEach(cell => cell.textContent = '');
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.className = 'cell';
+    });
     winnerContainer.style.display = 'none';
     winnerText.textContent = '';
     restartBtn.className = 'restart';

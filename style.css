@@ -55,3 +55,44 @@ body{
     top: 450px;
     left: 600px;
 }
+
+
+@media screen and (width < 600px) {
+    .red{
+        background-color: red;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .redWin{
+        color: red;
+    }
+    .blueWin{
+        color: blue;
+    }
+    .cellContainer{
+        width: 180px;
+        height: 180px;
+    }
+    .cell{
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+    }
+    .restart{
+        top: 320px;
+        left: 80px;
+    }
+    .winnerContainer{
+        font-size: 40px;
+        color: rgb(195, 255, 0);
+    }
+    .large{
+        font-size: 40px;
+        color: rgb(6, 251, 6);
+        position: absolute;
+        top: 200px;
+        left: 90px;
+        font-weight: bold;
+    }
+}
