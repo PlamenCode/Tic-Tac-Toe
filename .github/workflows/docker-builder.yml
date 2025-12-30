@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: plamencode/tik-tak-toe:latest
+          tags: plamencode/tik-tak-toe:${{ github.run_number }}
